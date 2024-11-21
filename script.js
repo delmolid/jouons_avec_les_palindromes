@@ -61,7 +61,30 @@ function isValidDate(dateString) {
 
  } 
 // Tests 
-console.log(isValidDate("30/06/2024"))
+// console.log(isValidDate("30/06/2024"))
 
+// 
+
+function isPalindrome(dateString){
+   // Découper la date au format "JJ/MM/AAAA"
+   const tableP = dateString.split("/")
+   let sensNormal = tableP.join("")
+   const sensNormalTable = sensNormal.split("")
+   let sensInverse = tableP.reverse().join("")
+   const sensInverseTable = sensInverse.split("")
+   console.log(sensInverse)
+   console.log(sensNormalTable)
+   console.log(sensInverseTable)
+
+   if(sensNormalTable[6] && sensNormalTable[7] == sensInverseTable[6] && sensInverseTable[7]){ 
+      console.log("true")
+      return true 
+} else {
+         console.log("false")
+         return false 
+      }
+} 
+isPalindrome("23/02/2032");
+isPalindrome("20/11/2024");
 
 
