@@ -72,7 +72,6 @@ function isPalindrome(dateString){
    const sensNormalTable = sensNormal.split("")
    let sensInverse = tableP.reverse().join("")
    const sensInverseTable = sensInverse.split("")
-   console.log(sensInverse)
    console.log(sensNormalTable)
    console.log(sensInverseTable)
 
