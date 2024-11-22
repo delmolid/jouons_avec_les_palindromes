@@ -68,14 +68,13 @@ function isValidDate(dateString) {
 function isPalindrome(dateString){
    // Découper la date au format "JJ/MM/AAAA"
    const tableP = dateString.split("/")
+   console.log(tableP)
    let sensNormal = tableP.join("")
    const sensNormalTable = sensNormal.split("")
    let sensInverse = tableP.reverse().join("")
    const sensInverseTable = sensInverse.split("")
-   console.log(sensNormalTable)
-   console.log(sensInverseTable)
 
-   if(sensNormalTable[6] && sensNormalTable[7] == sensInverseTable[6] && sensInverseTable[7]){ 
+   if( sensNormalTable[6] && sensNormalTable[7] === sensInverseTable[6] && sensInverseTable[7] ){ 
       console.log("true")
       return true 
 } else {
@@ -83,7 +82,7 @@ function isPalindrome(dateString){
          return false 
       }
 } 
-isPalindrome("23/02/2032");
-isPalindrome("20/11/2024");
-
-
+ isPalindrome("2040/02/04")
+ isPalindrome("2022/02/23")
+isPalindrome("2011/02/11") 
+ isPalindrome("2001/04/03") 
