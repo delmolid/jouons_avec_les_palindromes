@@ -42,24 +42,47 @@ function isValidDate(dateString) {     // Fonction qui verifie si le date est va
 /* Créer une fonction isPalindrome qui prend une date en string en paramètre 
 et retourne un booléen qui indique si la date est un palindrome. Si la date est invalide, retourner false. */
 
-function isPalindrome(dateString){      // Fonction qui verifie si le date est valide (utilisation d'une condition IF)
-   const tableP = dateString.split("/") // Fonction qui decoupe la date en jour, mois et date puis la stocke dans une variable                  /
+function isDatePalindrome(dateString){      // Fonction qui verifie si le date est valide (utilisation d'une condition IF)
+   const tableP = dateString.split("/") // Fonction qui decoupe la date en jour, mois et date puis la stocke dans une variable                  
    let sensNormal = tableP.join("")      // Fonction qui permet de lire la date dans un premier sens puis la stocke dans une variable
    let sensNormalTable = sensNormal.split("")  // Fonction qui decoupe les valeurs de la variable sensNormal puis la stocke dans une variable
    let sensInverse = [...tableP].reverse().join("")  // Fonction qui permet de lire la date dans le sens inverse puis la stocke dans une variable
    let sensInverseTable = sensInverse.split("")  // Fonction qui decoupe les valeurs de la variable sensInverse puis la stocke dans une variable   
-   if( sensNormalTable[6] && sensNormalTable[7] === sensInverseTable[6] && sensInverseTable[7] ){  // Condition qui vérifie si le dernier index et l'avant-dernier index de la date sont similiaires lorsque on lit la date dans un sens et dans le sens inverse
-   console.log("true")
-                console.log(dateString)
+   isValidDate(dateString)
+           if( (sensNormalTable[6] === sensInverseTable[7]) && (sensNormalTable[7] && sensInverseTable[6]) ){  // Condition qui vérifie si le dernier index et l'avant-dernier index de la date sont similiaires lorsque on lit la date dans un sens et dans le sens inverse
+                console.log("true")
                 return true 
-}       else {
+}          else {
                 console.log("false")
-                console.log(dateString)
                 return false 
       }
 } 
-// TEST (The international standard for writing dates in English / Ecrire la date en format "Anglais")
- isPalindrome("04/02/2040") // True
- isPalindrome("11/02/2011") // true
-isPalindrome("03/04/2001") // false 
-isPalindrome("23/11/2024") // false
+// TEST
+isDatePalindrome("04/02/2040") // True
+isDatePalindrome("23/02/2022")  // False
+
+
+
+function isStringPalindrome(string){ // Fonction qui permets de verifier si une chaine de caractère est un palindrome
+   const tableP = string.split("") // Fonction qui decoupe la date en jour, mois et date puis la stocke dans une variable                  
+   let sensNormal = tableP.join("")      // Fonction qui permet de lire la date dans un premier sens puis la stocke dans une variable
+   let sensNormalTable = sensNormal.split("")  // Fonction qui decoupe les valeurs de la variable sensNormal puis la stocke dans une variable
+   let sensInverse = [...tableP].reverse().join("")  // Fonction qui permet de lire la date dans le sens inverse puis la stocke dans une variable
+   let sensInverseTable = sensInverse.split("")  // Fonction qui decoupe les valeurs de la variable sensInverse puis la stocke dans une variable   
+   console.log(sensNormalTable)
+   console.log(sensInverseTable)
+   if( (sensNormalTable[sensNormalTable.length-2] === sensInverseTable[sensInverseTable.length-2]) && (sensNormalTable[sensNormalTable.length-1] && sensInverseTable[sensInverseTable.length-1]) ){  // Condition qui vérifie si le dernier index et l'avant-dernier index de la date sont similiaires lorsque on lit la date dans un sens et dans le sens inverse
+   console.log("true")
+                console.log(string)
+                return true 
+}       else {
+                console.log("false")
+                console.log(string)
+                return false 
+      }
+
+}
+isStringPalindrome("radar")
+isStringPalindrome("kayad")
+isStringPalindrome("jolie")
+isStringPalindrome("ressasser")
